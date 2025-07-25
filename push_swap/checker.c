@@ -6,7 +6,7 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:33:59 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/25 11:44:57 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/25 13:17:42 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,20 @@ static int	check_instr(char *input, char **instr)
 	return (FAIL);
 }
 
-int	main(int argc, char **argv)
+int	main(int ac, char **av)
 {
 	static char	*instr[12] = {
 		"sa\n", "sb\n", "ss\n", "pa\n", "pb\n", "ra\n", "rb\n",
 		"rr\n", "rra\n", "rrb\n", "rrr\n", NULL};
 	char		*input;
+	char		**arg;
+	t_list		**stack_a;
 
-	if (argc <= 1)
+	if (ac <= 1)
 		return (FAIL);
-	ft_strcmp(argv[1], "");
+	if (record_arg(ac, av) == FAIL)
+		return (write(2, "Error\n", 6), FAIL);
+
 	input = get_next_line(0);
 	while (input != NULL)
 	{
