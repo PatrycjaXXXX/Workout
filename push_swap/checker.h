@@ -17,4 +17,5 @@
 # include <limits.h>
 
 int	record_arg(int ac, char **av, char **arg);
+int	ft_atoi_safe(const char *nptr, int *number);
 #endif

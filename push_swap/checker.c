@@ -6,7 +6,7 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:33:59 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/25 15:18:31 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/25 15:32:19 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int ac, char **av)
 	while (input != NULL)
 	{
 		if (check_instr(input, instr) == SUCCESS)
-			ft_printf("ok");
+			ft_printf("ok\n");
 		else
 			return (free(input), ft_putstr_fd("Error\n", 2), FAIL);
 		free(input);
