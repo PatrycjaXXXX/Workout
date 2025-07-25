@@ -6,13 +6,13 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:33:59 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/21 17:38:05 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/25 11:44:57 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	check_instr(char *input, char **instr)
+static int	check_instr(char *input, char **instr)
 {
 	int	i;
 
