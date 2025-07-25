@@ -1,13 +1,13 @@
 #include "libft/libft.h"
 
-int	check_arg(char **arg)
+int	check_arg(char **arg, int i)
 {
-	int	i;
 	int	j;
 
-	i = 0;
 	while (arg[i])
 	{
+		if (ft_strlen(arg[i]) > 11)
+			return (FAIL);
 		j = 0;
 		while (arg[i][j])
 		{
@@ -27,11 +27,19 @@ int	check_arg(char **arg)
 	return (SUCCESS);
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	char **arg = {"12", "1", "12"};
-	if (check_arg(arg) == FAIL)
+	int		i;
+	char	**arg;
+
+	if (ac == 2)
+		arg = ft_split(av[1], ' ');
+	else
+		arg = av;
+	i = (ac > 2);
+	if (check_arg(arg, i) == FAIL)
 		ft_printf("FAIL");
 	else
-		ft_printf("SUCCESS");
+		ft_printf("SUccess");
+	return (SUCCESS);
 }
