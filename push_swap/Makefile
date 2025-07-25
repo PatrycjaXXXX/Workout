@@ -6,7 +6,7 @@
 #    By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 13:20:43 by psmolich          #+#    #+#              #
-#    Updated: 2025/07/25 11:48:05 by psmolich         ###   ########.fr        #
+#    Updated: 2025/07/25 15:19:24 by psmolich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME := push_swap
 CHECKER := checker
 LIB := libft/libft.a
 SRCS := push_swap.c 
-CHECKER_SRCS := checker.c
+CHECKER_SRCS := checker.c arg_center.c
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
 

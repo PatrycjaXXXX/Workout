@@ -16,4 +16,5 @@
 # include "libft/libft.h"
 # include <limits.h>
 
+int	record_arg(int ac, char **av, char **arg);
 #endif

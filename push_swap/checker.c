@@ -6,7 +6,7 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:33:59 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/25 13:17:42 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/25 15:18:31 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,17 @@ int	main(int ac, char **av)
 
 	if (ac <= 1)
 		return (FAIL);
-	if (record_arg(ac, av) == FAIL)
-		return (write(2, "Error\n", 6), FAIL);
-
+	arg = NULL;
+	if (record_arg(ac, av, arg) == FAIL)
+		return (ft_putstr_fd("Error\n", 2), FAIL);
+	stack_a = NULL;
 	input = get_next_line(0);
 	while (input != NULL)
 	{
 		if (check_instr(input, instr) == SUCCESS)
-			apply_instr(input);
+			ft_printf("ok");
 		else
-			return (free(input), write(2, "Error\n", 6), FAIL);
+			return (free(input), ft_putstr_fd("Error\n", 2), FAIL);
 		free(input);
 		input = get_next_line(0);
 	}
