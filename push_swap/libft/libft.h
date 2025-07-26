@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 16:46:40 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/21 16:24:16 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/26 12:37:24 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ typedef struct s_flags
 	int	space;
 	int	zero;
 	int	hash;
-}t_flags;
+}	t_flags;
 
 typedef struct s_prec
 {
 	int	dot;
 	int	len;
-}t_prec;
+}	t_prec;
 
 typedef struct s_spec
 {
@@ -55,7 +55,7 @@ typedef struct s_spec
 	t_prec	prec;
 	char	type;
 	int		zprec;
-}t_spec;
+}	t_spec;
 
 int		ft_printf(const char *format, ...);
 int		ft_is_conv(const char *format, int *move, t_spec	*conv);
@@ -111,7 +111,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}t_list;
+}	t_list;
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_uint_ptr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 12:17:21 by psmolich          #+#    #+#             */
-/*   Updated: 2025/06/18 15:05:11 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/26 12:39:20 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_putptr_rvf(uintptr_t ptr, t_spec *conv, int *p_count)
 		ft_padding(conv->width, p_count, ' ');
 }
 
-void	ft_putuint_base_rvf(unsigned int nb, char *base, 
+void	ft_putuint_base_rvf(unsigned int nb, char *base,
 	t_spec *conv, int *p_count)
 {
 	int	nblen;

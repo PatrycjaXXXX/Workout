@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:33:59 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/26 12:18:33 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/26 12:35:05 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 	char		*input;
 	char		**arg;
 	t_list		**stack_a;
-
+	
 	if (ac <= 1)
 		return (FAIL);
 	arg = NULL;
