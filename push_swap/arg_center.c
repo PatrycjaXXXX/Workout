@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_center.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 13:09:14 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/26 11:45:42 by codespace        ###   ########.fr       */
+/*   Updated: 2025/07/26 14:37:33 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	check_arg(char **arg, int i)
 
 	while (arg[i])
 	{
-		if (ft_strlen(arg[i]) > 11)
+		if (ft_strlen(arg[i]) > 11) //int min has 11 characters so everything longer is definietly not an int
 			return (FAIL);
 		j = 0;
 		while (arg[i][j])
@@ -67,17 +67,20 @@ static int	check_arg(char **arg, int i)
 	return (SUCCESS);
 }
 
-int	record_arg(int ac, char **av, char **arg)
-	//, t_list **stack_a)
+int	collect_arg(int ac, char **av, char **arg)//, t_list **stack_a)
 {
 	int		i;
 	//t_list	new;
 
 	if (ac == 2)
+	{
+		if (ft_strstr(av[1], "  ")) //check if there is no multiple spaces
+			return (FAIL);
 		arg = ft_split(av[1], ' ');
+	}
 	else
 		arg = av;
-	i = (ac > 2);
+	i = !(ac == 2);
 	if (check_arg(arg, i) == FAIL)
 		return (FAIL);
 	int at = ft_atoi_safe(arg[i], &i);
