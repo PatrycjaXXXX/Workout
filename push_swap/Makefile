@@ -6,7 +6,7 @@
 #    By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 13:20:43 by psmolich          #+#    #+#              #
-#    Updated: 2025/07/25 15:19:24 by psmolich         ###   ########.fr        #
+#    Updated: 2025/07/28 11:16:03 by psmolich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,3 +44,6 @@ fclean: clean
 	make fclean -C libft/
 
 re: fclean all
+
+reb: fclean bonus
+	make clean

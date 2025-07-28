@@ -6,35 +6,20 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 13:09:14 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/28 11:08:43 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/28 11:25:52 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "checker.h"
 
+//check_value is a safe version of atoi; if value is within integer limits - SUCCESS
 static int	check_value(const char *nptr, int *number)
 {
-	long	i;
 	long	nb;
-	long	sign;
 
-	i = 0;
-	nb = 0;
-	sign = 1;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (ft_isdigit(nptr[i]))
-	{
-		nb = nb * 10 + (nptr[i] - 48);
-		i++;
-	}
-	nb *= sign;
-	if (((-2147483648) <= nb) && (nb <= 2147483647))
+	nb = ft_atol(nptr);
+	if (((long)INT_MIN <= nb) && (nb <= (long)INT_MAX))
 	{
 		*number = (int)nb;
 		return (SUCCESS);
@@ -46,14 +31,13 @@ static int	check_arg(char **arg, int i)
 {
 	int	j;
 
-	ft_printf("check_arg");
 	while (arg[i])
 	{
 		if (ft_strlen(arg[i]) > 11) //int min has 11 characters so everything longer is definietly not an int
 			return (FAIL);
 		j = 0;
 		if (!(ft_isdigit(arg[i][0]) || arg[i][0] == '-' || arg[i][0] == '+'))
-				return (FAIL);
+			return (FAIL);
 		while (arg[i][++j])
 			if (!ft_isdigit(arg[i][j]))
 				return (FAIL);
@@ -94,5 +78,7 @@ int	record_arg(int ac, char **av, char **arg)//, t_list **stack_a)
 	// {
 	// 	i++;
 	// }
+	if (ac == 2)
+		free(arg);
 	return (SUCCESS);
 }
