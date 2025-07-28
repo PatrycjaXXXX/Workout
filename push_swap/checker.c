@@ -6,7 +6,7 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:33:59 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/26 13:25:21 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/28 10:30:03 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ int	main(int ac, char **av)
 		"rr\n", "rra\n", "rrb\n", "rrr\n", NULL};
 	char		*input;
 	char		**arg;
-	t_list		**stack_a;
+	//t_list		**stack_a;
 
 	if (ac <= 1)
 		return (FAIL);
 	arg = NULL;
 	if (record_arg(ac, av, arg) == FAIL)
 		return (ft_putstr_fd("Error\n", 2), FAIL);
-	stack_a = NULL;
+	//stack_a = NULL;
 	input = get_next_line(0);
 	while (input != NULL)
 	{
