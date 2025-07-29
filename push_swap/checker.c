@@ -6,7 +6,7 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:33:59 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/29 07:31:19 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/29 07:59:30 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,12 @@ int	main(int ac, char **av)
 		"sa\n", "sb\n", "ss\n", "pa\n", "pb\n", "ra\n", "rb\n",
 		"rr\n", "rra\n", "rrb\n", "rrr\n", NULL};
 	char		*input;
-	char		**arg;
 	t_list		**stack_a;
 
 	if (ac <= 1)
 		return (FAIL);
-	arg = NULL;
-	stack_a = NULL;
-	if (record_arg(ac, av, arg, stack_a) == FAIL)
+	stack_a = (t_list **)malloc(sizeof(t_list));
+	if (record_arg(ac, av, stack_a) == FAIL)
 		return (ft_putstr_fd("Error\n", 2), FAIL);
 	input = get_next_line(0);
 	while (input != NULL)

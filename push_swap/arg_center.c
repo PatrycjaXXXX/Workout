@@ -6,7 +6,7 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 13:09:14 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/29 07:37:18 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/29 07:59:21 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,11 @@ static void	free_arr(char **arr)
 	return ;
 }
 
-int	record_arg(int ac, char **av, char **arg, t_list **stack_a)
+int	record_arg(int ac, char **av, t_list **stack_a)
 {
-	int	i;
-	int	value;
+	int		i;
+	int		value;
+	char	**arg;
 
 	if (ac == 2)
 	{

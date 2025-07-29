@@ -6,7 +6,7 @@
 #    By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 13:20:43 by psmolich          #+#    #+#              #
-#    Updated: 2025/07/29 06:36:47 by psmolich         ###   ########.fr        #
+#    Updated: 2025/07/29 07:59:55 by psmolich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ LST := lst_utils/ft_lstnew.c \
 		lst_utils/ft_lstiter.c \
 		lst_utils/ft_lstmap.c \
 PUSHSWAP_SRCS := push_swap.c 
-CHECKER_SRCS := checker.c arg_center.c
+CHECKER_SRCS := checker.c arg_center.c $(LST)
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
 
