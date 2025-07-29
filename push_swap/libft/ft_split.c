@@ -6,7 +6,7 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 19:16:04 by psmolich          #+#    #+#             */
-/*   Updated: 2025/06/08 17:44:56 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/29 07:38:00 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char	*ft_strdup_split(char **str_ptr, char c)
 		i++;
 	dup = (char *)malloc(sizeof(char) * (i + 1));
 	if (!dup)
-		return ((void *)0);
+		return (NULL);
 	j = 0;
 	while (j < i)
 	{
@@ -72,7 +72,7 @@ char	**ft_split(char const *s, char c)
 	count_words = ft_count_words(s, c);
 	array = (char **)malloc(sizeof(char *) * (count_words + 1));
 	if (!array)
-		return ((void *)0);
+		return (NULL);
 	str_ptr = (char *)s;
 	i = 0;
 	while (i < count_words)
@@ -83,10 +83,10 @@ char	**ft_split(char const *s, char c)
 			while (--i >= 0)
 				free(array[i]);
 			free(array);
-			return ((void *)0);
+			return (NULL);
 		}
 		i++;
 	}
-	array[count_words] = (void *)0;
+	array[count_words] = NULL;
 	return (array);
 }

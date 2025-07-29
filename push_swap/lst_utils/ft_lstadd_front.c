@@ -6,11 +6,11 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 17:57:03 by psmolich          #+#    #+#             */
-/*   Updated: 2025/05/23 19:18:08 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/29 06:36:47 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lst.h"
 
 //Adds the node ’new’ at the beginning of the list.
 // lst: The address of a pointer to the first node of

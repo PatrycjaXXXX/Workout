@@ -6,14 +6,14 @@
 #    By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/21 14:09:09 by psmolich          #+#    #+#              #
-#    Updated: 2025/07/26 14:09:01 by psmolich         ###   ########.fr        #
+#    Updated: 2025/07/29 06:36:47 by psmolich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SILENT:
-.Phony: NAME all clean fcleam re
+.Phony: all clean fcleam re
 
-NAME := libft.a
+LIB := libft.a
 FT := memset bzero memcpy memmove memchr memcmp strlen isalpha isdigit \
 			isalnum isascii isprint toupper tolower strchr strrchr strncmp \
 			strlcpy strlcat strnstr atoi calloc strdup substr strjoin strtrim \
@@ -21,23 +21,21 @@ FT := memset bzero memcpy memmove memchr memcmp strlen isalpha isdigit \
 			putnbr_fd atol strcmp strstr\
 			check printf put_c_s put_uint_ptr put_int \
 			get_next_line \
-			lstnew lstadd_front lstsize lstlast \
-			lstadd_back lstdelone lstclear lstiter lstmap
 SRCS := $(patsubst %, ft_%.c, $(FT))
 OBJS := $(patsubst %.c, %.o, $(SRCS))
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-all: $(NAME)
+all: $(LIB)
 
-$(NAME): $(OBJS)
+$(LIB): $(OBJS)
 	ar rcs libft.a $(OBJS)
 
 clean:
-	rm -f $(OBJS) $(BOBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(LIB)
 
 re : fclean all 
 	make clean

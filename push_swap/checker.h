@@ -14,7 +14,8 @@
 # define CHECKER_H
 
 # include "libft/libft.h"
+# include "lst_utils/lst.h"
 # include <limits.h>
 
-int	record_arg(int ac, char **av, char **arg);
+int	record_arg(int ac, char **av, char **arg, t_list **stack_a);
 #endif

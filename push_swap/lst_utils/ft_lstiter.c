@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/23 19:44:13 by psmolich          #+#    #+#             */
-/*   Updated: 2025/05/23 21:50:58 by psmolich         ###   ########.fr       */
+/*   Created: 2025/05/23 20:38:01 by psmolich          #+#    #+#             */
+/*   Updated: 2025/07/29 07:12:45 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lst.h"
 
-// lst: The address of a pointer to the first node of
-// a list.
-// new: The address of a pointer to the node to be
-// added.
-// Description Adds the node ’new’ at the end of the list.
+// lst: The address of a pointer to a node.
+// f: The address of the function to apply to each
+// node’s content.
+// Iterates through the list ’lst’ and applies the
+// function ’f’ to the content of each node.
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*last;
+	t_list	*temp;
+	t_list	*curr;
 
-	if (!lst || !new)
+	if (!lst || !f)
 		return ;
-	if (!*lst)
+	curr = lst;
+	while (curr)
 	{
-		*lst = new;
-		return ;
+		temp = curr->next;
+		f(curr->content);
+		curr = temp;
 	}
-	last = ft_lstlast(*lst);
-	last->next = new;
 }

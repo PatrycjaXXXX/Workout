@@ -6,44 +6,54 @@
 #    By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 13:20:43 by psmolich          #+#    #+#              #
-#    Updated: 2025/07/28 11:16:03 by psmolich         ###   ########.fr        #
+#    Updated: 2025/07/29 06:36:47 by psmolich         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SILENT:
-.PHONY: all bonus clean fclean re
+.PHONY: all bonus clean fclean re reb
 
-NAME := push_swap
+PUSHSWAP := push_swap
 CHECKER := checker
 LIB := libft/libft.a
-SRCS := push_swap.c 
+LST := lst_utils/ft_lstnew.c \
+		lst_utils/ft_lstadd_front.c \
+		lst_utils/ft_lstsize.c \
+		lst_utils/ft_lstlast.c \
+		lst_utils/ft_lstadd_back.c \
+		lst_utils/ft_lstdelone.c \
+		lst_utils/ft_lstclear.c \
+		lst_utils/ft_lstiter.c \
+		lst_utils/ft_lstmap.c \
+PUSHSWAP_SRCS := push_swap.c 
 CHECKER_SRCS := checker.c arg_center.c
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
 
-all: $(NAME)
+all: $(PUSHSWAP)
 
 bonus: $(CHECKER) 
 
-$(NAME): $(LIB)
-	$(CC) $(CFLAGS) -o $(NAME) $(SRCS) $(LIB)
+$(PUSHSWAP): $(LIB)
+	$(CC) $(CFLAGS) -o $(PUSHSWAP) $(PUSHSWAP_SRCS) $(LIB)
 
 $(CHECKER): $(LIB)
 	$(CC) $(CFLAGS) -o $(CHECKER) $(CHECKER_SRCS) $(LIB)
 
 $(LIB):
 	make -C libft/
+	make clean -C libft/
 
 clean:
 	make clean -C libft/
-	rm -f $(LIB)
 	
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(PUSHSWAP)
 	rm -f $(CHECKER)
 	make fclean -C libft/
 
 re: fclean all
+	make clean
 
 reb: fclean bonus
 	make clean

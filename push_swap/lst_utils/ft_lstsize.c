@@ -6,11 +6,11 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 19:23:18 by psmolich          #+#    #+#             */
-/*   Updated: 2025/05/23 21:51:11 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/29 07:12:45 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lst.h"
 
 // lst: The beginning of the list. (as adress)
 // Return value The length of the list
