@@ -6,11 +6,14 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:33:59 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/29 07:59:30 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/29 08:31:20 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include "libft/libft.h"
+#include "lst_utils/lst.h"
+#include <limits.h>
 
 static int	check_instr(char *input, char **instr)
 {

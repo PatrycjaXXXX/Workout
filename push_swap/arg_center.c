@@ -6,11 +6,14 @@
 /*   By: psmolich <psmolich@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 13:09:14 by psmolich          #+#    #+#             */
-/*   Updated: 2025/07/29 07:59:21 by psmolich         ###   ########.fr       */
+/*   Updated: 2025/07/29 08:12:38 by psmolich         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include "libft/libft.h"
+#include "lst_utils/lst.h"
+#include <limits.h>
 
 static int	check_value(const char *nptr, int *number)
 {
